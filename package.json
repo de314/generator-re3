@@ -1,5 +1,5 @@
 {
-  "name": "generator-re-3",
+  "name": "generator-re3",
   "version": "0.0.0",
   "description": "React, Redux, Recompose Generator Utils",
   "homepage": "https://de314.github.io/generator-re3",
@@ -8,14 +8,9 @@
     "email": "david@de314.com",
     "url": "https://github.com/de314"
   },
-  "files": [
-    "generators"
-  ],
+  "files": ["generators"],
   "main": "generators/index.js",
-  "keywords": [
-    "",
-    "yeoman-generator"
-  ],
+  "keywords": ["", "yeoman-generator"],
   "devDependencies": {
     "yeoman-test": "^1.7.0",
     "yeoman-assert": "^3.1.0",
@@ -45,20 +40,11 @@
     "test": "jest"
   },
   "lint-staged": {
-    "*.js": [
-      "eslint --fix",
-      "git add"
-    ],
-    "*.json": [
-      "prettier --write",
-      "git add"
-    ]
+    "*.js": ["eslint --fix", "git add"],
+    "*.json": ["prettier --write", "git add"]
   },
   "eslintConfig": {
-    "extends": [
-      "xo",
-      "prettier"
-    ],
+    "extends": ["xo", "prettier"],
     "env": {
       "jest": true,
       "node": true
@@ -72,9 +58,7 @@
         }
       ]
     },
-    "plugins": [
-      "prettier"
-    ]
+    "plugins": ["prettier"]
   },
   "repository": "de314/generator-re-3",
   "license": "MIT"
