@@ -8,7 +8,7 @@ module.exports = class extends Generator {
   prompting() {
     const that = this
     const hocChoices = [
-      { name: 'Proptypes', value: 'proptypes', checked: false },
+      { name: 'Enhanced (export raw)', value: 'enhanced', checked: true },
       { name: 'Redux connect', value: 'redux', checked: true },
       { name: 'With Auth', value: 'auth', checked: false },
       { name: 'With Router', value: 'router', checked: false },
@@ -27,6 +27,13 @@ module.exports = class extends Generator {
           'Where should the component be saved? This will be prefixed with "./src/components/"',
         default: ({ name }) => _.camelCase(name),
         validate: val => !_.isNil(val.match(/^(?:[a-z][a-zA-Z0-9]+\/)*[a-z][a-zA-Z0-9]+$/)),
+      },
+      {
+        type: 'confirm',
+        name: 'proptypes',
+        message: 'Will this component use proptypes?',
+        default: true,
+        store: true,
       },
       {
         type: 'checkbox',

@@ -29,10 +29,18 @@ const <%= name -%> = ({}) => {
 
 <%= name -%>.propTypes = {}
 <% } -%>
+<% if (enhanced) { -%>
 
 export const Raw<%= name %> = <%= name %>
+<% } -%>
 
 export default compose(
+<% if (router) { -%>
+  withRouter,
+<% } -%>
+<% if (auth) { -%>
+  withAuth,
+<% } -%>
 <% if(redux) { -%>
   connect(
     state => ({}),
