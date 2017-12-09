@@ -1,11 +1,10 @@
 import React from 'react'
 
-import EnhancedHeader from 'components/layout/EnhancedHeader'
+import EnhancedLayout from 'components/layout/EnhancedLayout'
 
 const App = () => (
   <div className="App">
-    <EnhancedHeader />
-    <h1>Hello, App!</h1>
+    <EnhancedLayout />
   </div>
 )
 

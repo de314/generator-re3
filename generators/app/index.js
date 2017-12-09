@@ -67,6 +67,8 @@ module.exports = class extends Generator {
       'src/index.js',
       'src/components/App.js',
       'src/components/layout',
+      'src/hoc',
+      'src/routes',
     ]
     copies.forEach(f => this.fs.copy(this.templatePath(f), this.destinationPath(f)))
     this._writeComponents()
@@ -99,8 +101,13 @@ module.exports = class extends Generator {
 
   _writeComponents() {
     const deletes = ['src/App.js', 'src/App.css', 'src/App.spec.js']
-    deletes.forEach(f => this.fs.delete)
-    const copies = ['App.js', 'layout/EnhancedHeader.js']
+    deletes.forEach(f => this.fs.delete(this.destinationPath(f)))
+    const copies = [
+      'App.js',
+      'layout/AnonLayout.js',
+      'layout/AuthLayout.js',
+      'layout/EnhancedLayout.js',
+    ]
     copies.forEach(f =>
       this.fs.copy(
         this.templatePath(`src/components/${f}`),

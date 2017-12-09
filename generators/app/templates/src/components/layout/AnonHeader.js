@@ -1,6 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
+import withAuth from 'hoc/withAuth'
+
 import { Link } from 'react-router-dom'
 
 const AnonHeader = ({ loggingIn, startLogin }) => {
@@ -56,4 +58,6 @@ AnonHeader.propTypes = {
   startLogin: PropTypes.func.isRequired,
 }
 
-export default AnonHeader
+export const RawAnonHeader = AnonHeader
+
+export default withAuth(AnonHeader)

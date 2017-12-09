@@ -1,6 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
+import withAuth from 'hoc/withAuth'
+
 import { Link } from 'react-router-dom'
 
 const AuthHeader = ({ user, startLogout }) => {
@@ -50,4 +52,6 @@ AuthHeader.propTypes = {
   user: PropTypes.object,
 }
 
-export default AuthHeader
+export const RawAuthHeader = AuthHeader
+
+export default withAuth(AuthHeader)
