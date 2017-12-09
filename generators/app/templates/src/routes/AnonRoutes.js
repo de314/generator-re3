@@ -1,9 +1,10 @@
 import React from 'react'
 
 import { Route, Switch } from 'react-router-dom'
+// ::IMPORT_ANON::
 import Page404 from 'routes/common/Page404'
 // ::IMPORT_COMMON::
-// ::IMPORT_ANON::
+
 
 const AnonRoutes = () => (
   <div className="AnonRoutes">
