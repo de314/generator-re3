@@ -5,6 +5,14 @@ const yosay = require('yosay')
 const _ = require('lodash')
 
 module.exports = class extends Generator {
+  constructor(args, opts) {
+    super(args, opts)
+
+    this.argument('name', { type: String, required: false })
+
+    this.log(this.options.name)
+  }
+
   prompting() {
     const that = this
     const hocChoices = [
@@ -18,6 +26,7 @@ module.exports = class extends Generator {
         type: 'input',
         name: 'name',
         message: 'Component name? No not include a path or file extension?',
+        default: this.options.name,
         validate: val => !_.isNil(val.match(/^[A-Z][a-zA-Z0-9]+$/)),
       },
       {
