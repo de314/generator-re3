@@ -18,20 +18,20 @@ import withAuth from 'hoc/withAuth'
 import { withRouter } from 'react-router-dom'
 <% } -%>
 
-const <%= name -%> = ({}) => {
+const <%= compName -%> = ({}) => {
   return (
-    <div className="<%= name -%>">
+    <div className="<%= compName -%>">
       <h1>Hello, World!</h1>
     </div>
   )
 }
 <% if (proptypes) { -%>
 
-<%= name -%>.propTypes = {}
+<%= compName -%>.propTypes = {}
 <% } -%>
 <% if (enhanced) { -%>
 
-export const Raw<%= name %> = <%= name %>
+export const Raw<%= compName %> = <%= compName %>
 <% } -%>
 
 export default compose(
@@ -47,4 +47,4 @@ export default compose(
     dispatch => ({}),
   ),
 <% } -%>
-)(<%= name -%>)
+)(<%= compName -%>)

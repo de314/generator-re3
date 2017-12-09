@@ -8,9 +8,9 @@ module.exports = class extends Generator {
   constructor(args, opts) {
     super(args, opts)
 
-    this.argument('name', { type: String, required: false })
+    this.argument('compName', { type: String, required: false })
 
-    this.log(this.options.name)
+    this.log(this.options.compName)
   }
 
   prompting() {
@@ -24,9 +24,9 @@ module.exports = class extends Generator {
     const prompts = [
       {
         type: 'input',
-        name: 'name',
+        name: 'compName',
         message: 'Component name? No not include a path or file extension?',
-        default: this.options.name,
+        default: this.options.compName,
         validate: val => !_.isNil(val.match(/^[A-Z][a-zA-Z0-9]+$/)),
       },
       {
@@ -34,7 +34,7 @@ module.exports = class extends Generator {
         name: 'location',
         message:
           'Where should the component be saved? This will be prefixed with "./src/components/"',
-        default: ({ name }) => _.camelCase(name),
+        default: ({ compName }) => _.camelCase(compName),
         validate: val => !_.isNil(val.match(/^(?:[a-z][a-zA-Z0-9]+\/)*[a-z][a-zA-Z0-9]+$/)),
       },
       {
@@ -63,7 +63,7 @@ module.exports = class extends Generator {
   writing() {
     this.fs.copyTpl(
       this.templatePath('__component.tpl.js'),
-      this.destinationPath(`src/components/${this.props.location}/${this.props.name}.js`),
+      this.destinationPath(`src/components/${this.props.location}/${this.props.compName}.js`),
       this.props
     )
   }
