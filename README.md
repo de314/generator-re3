@@ -7,13 +7,13 @@ First, install [Yeoman](http://yeoman.io) and generator-re-3 using [npm](https:/
 
 ```bash
 npm install -g yo
-npm install -g generator-re-3
+npm install -g generator-re3
 ```
 
 Then generate your new project:
 
 ```bash
-yo re-3
+yo re3
 ```
 
 ## Getting To Know Yeoman
